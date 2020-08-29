@@ -40,12 +40,17 @@ function App() {
         <br />{}
         <input type="text" placeholder="Enter" onChange={inputEvent} value={text} />
         <Button className="newBtn" onClick={AddItem}><AddIcon /></Button>
+        <br />
+        
         <ol>
           {item.map((curValue, index) => {
             return <ToDoList text={curValue} key={index} id={index} onSelect={delbtn} />
           })}
         </ol>
+        
       </div>
+    
+
 
     </div>
   </>
