@@ -3,6 +3,10 @@ import logo from './logo.svg';
 import './App.css';
 import ToDoList from './ToDoList';
 
+import Button from '@material-ui/core/Button';
+import AddIcon from '@material-ui/icons/Add';
+import DeleteIcon from '@material-ui/icons/Delete';
+
 function App() {
   const [text, setText] = useState("");
   const [item, setItem] = useState([]);
@@ -35,7 +39,7 @@ function App() {
         <h1>ToDo list</h1>
         <br />{}
         <input type="text" placeholder="Enter" onChange={inputEvent} value={text} />
-        <button onClick={AddItem}>+</button>
+        <Button className="newBtn" onClick={AddItem}><AddIcon /></Button>
         <ol>
           {item.map((curValue, index) => {
             return <ToDoList text={curValue} key={index} id={index} onSelect={delbtn} />
